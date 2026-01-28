@@ -1,0 +1,155 @@
+﻿<Window x:Class="VladimirVAZ3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:VladimirVAZ3"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Design.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <DataTemplate x:Key="Message">
+                <Border
+                        Margin="3"
+                        Background="{Binding ColorBorder}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+
+                        <materialDesign:PackIcon
+                                HorizontalContentAlignment="Center"
+                                VerticalContentAlignment="Center"
+                                VerticalAlignment="Center"
+                                HorizontalAlignment="Center"
+                                Kind="{Binding Icon}"
+                                Foreground="{Binding ColorIcon}"/>
+
+                        <Label
+                            Grid.Column="1"
+                            Foreground="White"
+                            Content="{Binding TextError}"/>
+                    </Grid>
+                </Border>
+            </DataTemplate>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="6*"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Border x:Name="BorderLogOn"
+                    Grid.Column="1"
+                    Grid.Row="1"
+                    Background="LightGray"
+                    CornerRadius="10"
+                    Padding="5">
+
+                <Border.Effect>
+                    <DropShadowEffect Color="Black" ShadowDepth="15" BlurRadius="20" Opacity="0.5"/>
+                </Border.Effect>
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <Label Grid.Row="0"
+                           Content="Введите логин.."
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Top"/>
+
+                    <TextBox HorizontalAlignment="Center"
+                             VerticalAlignment="Center"
+                             VerticalContentAlignment="Center"
+                             HorizontalContentAlignment="Left"
+                             Style="{StaticResource RoundedTextBoxStyle}"
+                             Height="50"
+                             Width="200"
+                             Grid.Row="0"
+                             x:Name="Login"/>
+
+                    <Label Grid.Row="1"
+                           Content="Введите пароль.."
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Top"/>
+
+                    <PasswordBox x:Name="Password"
+                                 HorizontalAlignment="Center"
+                                 VerticalAlignment="Center"
+                                 VerticalContentAlignment="Center"
+                                 HorizontalContentAlignment="Left"
+                                 Style="{StaticResource RoundedPasswordBoxStyle}"
+                                 Height="50"
+                                 Width="200"
+                                 Grid.Row="1"/>
+
+                    <Grid
+                        Grid.Row="2">
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Button x:Name="EnterButton"
+                                Grid.Column="0"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                VerticalContentAlignment="Center"
+                                HorizontalContentAlignment="Center"
+                                Style="{StaticResource RoundedButtonStyle}"
+                                Content="Вход"
+                                Height="50"
+                                Width="80" Click="EnterButton_Click"/>
+
+                        <Button x:Name="RegistrationButton"
+                                Grid.Column="1"
+                                HorizontalAlignment="Right"
+                                VerticalAlignment="Center"
+                                VerticalContentAlignment="Center"
+                                HorizontalContentAlignment="Center"
+                                Style="{StaticResource RoundedButtonStyle}"
+                                Content="Регистрация"
+                                Height="50"
+                                Width="100" Click="RegistrationButton_Click"/>
+                    </Grid>
+                </Grid>
+            </Border>
+
+            <Frame x:Name="RegistrationFrame"
+                   VerticalAlignment="Bottom"
+                   Grid.Column="1"
+                   Grid.Row="1"
+                   NavigationUIVisibility="Hidden"/>
+        </Grid>
+
+        <Frame x:Name="Menu"
+               NavigationUIVisibility="Hidden"/>
+
+        <StackPanel x:Name="ParentMessage"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Top">
+
+        </StackPanel>
+    </Grid>
+</Window>

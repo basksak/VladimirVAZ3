@@ -1,0 +1,234 @@
+﻿<Page x:Class="VladimirVAZ3.Registration"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:local="clr-namespace:VladimirVAZ3"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Registration">
+
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Design.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+
+        <Border Grid.Column="1"
+                Grid.Row="1"
+                Background="LightGray"
+                CornerRadius="10"
+                Padding="5">
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="0.35*"/>
+                </Grid.RowDefinitions>
+
+                <ScrollViewer Grid.Row="0"
+                              HorizontalScrollBarVisibility="Disabled"
+                              VerticalScrollBarVisibility="Hidden">
+                    <StackPanel>
+                        <Label 
+                               Content="ФИО"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Top"/>
+                        <TextBox HorizontalAlignment="Center"
+                                 VerticalAlignment="Center"
+                                 VerticalContentAlignment="Center"
+                                 HorizontalContentAlignment="Left"
+                                 Style="{StaticResource RoundedTextBoxStyle}"
+                                 Height="50"
+                                 Width="200"
+                                 Grid.Row="0"
+                                 x:Name="FIO" LostFocus="FIO_LostFocus"/>
+
+                        <Label 
+                               Content="Паспортные данные"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Top"/>
+
+                    <Grid HorizontalAlignment="Center"
+                          VerticalAlignment="Center">
+                        
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBox HorizontalAlignment="Right"
+                                 VerticalAlignment="Center"
+                                 VerticalContentAlignment="Center"
+                                 HorizontalContentAlignment="Left"
+                                 Style="{StaticResource RoundedTextBoxStyle}"
+                                 Height="50"
+                                 Width="50"
+                                 Grid.Column="0"
+                                 x:Name="DataSeriesPassport" />
+
+                        <TextBox Margin="10,0"
+                                 HorizontalAlignment="Left"
+                                 VerticalAlignment="Center"
+                                 VerticalContentAlignment="Center"
+                                 HorizontalContentAlignment="Left"
+                                 Style="{StaticResource RoundedTextBoxStyle}"
+                                 Height="50"
+                                 Width="100"
+                                 Grid.Column="1"
+                                 x:Name="DataNumberPassport"/>
+                    </Grid>
+
+                    <Label
+                               Content="Категория"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Top"/>
+                        <ListBox x:Name="ListCategory"
+                                 HorizontalAlignment="Center"
+                                 VerticalAlignment="Center">
+                        <ComboBox SelectedIndex="0">
+                            <Label Content="A"/>
+                                <Label Content="B"/>
+                                <Label Content="C"/>
+                                <Label Content="D"/>
+                            </ComboBox>
+                        <ComboBox SelectedIndex="1">
+                            <Label Content="A"/>
+                                <Label Content="B"/>
+                                <Label Content="C"/>
+                                <Label Content="D"/>
+                            </ComboBox>
+                        <ComboBox SelectedIndex="2">
+                            <Label Content="A"/>
+                                <Label Content="B"/>
+                                <Label Content="C"/>
+                                <Label Content="D"/>
+                            </ComboBox>
+                        </ListBox>
+
+                        <Label
+                               Content="Дата получения прав"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Top"/>
+                        <DatePicker
+                            x:Name="DateRool"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"/>
+
+                        <Label
+                               Content="Номер водительского удостоверения"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Top"/>
+                        <TextBox HorizontalAlignment="Center"
+                                 VerticalAlignment="Center"
+                                 VerticalContentAlignment="Center"
+                                 HorizontalContentAlignment="Left"
+                                 Style="{StaticResource RoundedTextBoxStyle}"
+                                 Height="50"
+                                 Width="200"
+                                 Grid.Row="0"
+                                 x:Name="NumberDriversRool"/>
+
+                        <Label
+                               Content="Дата рождения"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Top"/>
+                        <DatePicker x:Name="DateBirthday"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"/>
+
+                        <Label
+                               Content="Номер телефона"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Top"/>
+                        <TextBox HorizontalAlignment="Center"
+                                 VerticalAlignment="Center"
+                                 VerticalContentAlignment="Center"
+                                 HorizontalContentAlignment="Left"
+                                 Style="{StaticResource RoundedTextBoxStyle}"
+                                 Height="50"
+                                 Width="200"
+                                 Grid.Row="0"
+                                 x:Name="NumberPhone"/>
+
+                    <Label
+                               Content="Логин"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Top"/>
+                    <TextBox HorizontalAlignment="Center"
+                                 VerticalAlignment="Center"
+                                 VerticalContentAlignment="Center"
+                                 HorizontalContentAlignment="Left"
+                                 Style="{StaticResource RoundedTextBoxStyle}"
+                                 Height="50"
+                                 Width="200"
+                                 Grid.Row="0"
+                                 x:Name="Login"/>
+
+                    <Label
+                               Content="Пароль"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Top"/>
+                    <TextBox HorizontalAlignment="Center"
+                                 VerticalAlignment="Center"
+                                 VerticalContentAlignment="Center"
+                                 HorizontalContentAlignment="Left"
+                                 Style="{StaticResource RoundedTextBoxStyle}"
+                                 Height="50"
+                                 Width="200"
+                                 Grid.Row="0"
+                                 x:Name="Password"/>
+
+                    <Label
+                               Content="Почта"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Top"/>
+                        <TextBox HorizontalAlignment="Center"
+                                 VerticalAlignment="Center"
+                                 VerticalContentAlignment="Center"
+                                 HorizontalContentAlignment="Left"
+                                 Style="{StaticResource RoundedTextBoxStyle}"
+                                 Height="50"
+                                 Width="200"
+                                 Grid.Row="0"
+                                 x:Name="Email"/>
+
+                </StackPanel>
+                </ScrollViewer>
+
+                <Grid
+                    Grid.Row="1">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Button x:Name="Back"
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            VerticalContentAlignment="Center"
+                            HorizontalContentAlignment="Center"
+                            Style="{StaticResource RoundedButtonStyle}"
+                            Content="Назад"
+                            Height="50"
+                            Width="80" PreviewMouseDown="Back_PreviewMouseDown" />
+
+                    <Button x:Name="RegistrationButton"
+                            Grid.Column="1"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Center"
+                            VerticalContentAlignment="Center"
+                            HorizontalContentAlignment="Center"
+                            Style="{StaticResource RoundedButtonStyle}"
+                            Content="Регистрация"
+                            Height="50"
+                            Width="100" Click="RegistrationButton_Click"/>
+                </Grid>
+            </Grid>
+        </Border>
+</Page>
